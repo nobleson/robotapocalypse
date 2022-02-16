@@ -67,4 +67,6 @@ Delete survivor's data with this DELETE url:
 ```
 http://localhost:8080/survivor/{id}
 ```
-
+# Database Details
+We use H2 database which is an open-source lightweight database build with Java and is configured to run as un-memory database. 
+It is not used for production development, but mostly used for development and testing. However Spring Data, JPA and Hibernate is used to connect the H2 database therefore any database such as mysql can be used in the production environment without any neccessary code change.
