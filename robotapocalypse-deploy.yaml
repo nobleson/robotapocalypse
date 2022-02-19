@@ -19,7 +19,7 @@ spec:
   selector:
     matchLabels:
       app: robotapocalypse
-  replicas: 2 # Number of replicas that will be created for this deployment
+  replicas: 1 # Number of replicas that will be created for this deployment
   template:
     metadata:
       labels:
@@ -29,5 +29,7 @@ spec:
         - name: robotapocalypse 
           image: nobleson/robotapocalypse # Image that will be used to containers in the cluster
           imagePullPolicy: IfNotPresent
+          command: ["java"]
+          args: ["-jar","/apocalypse.jar"]
           ports:
             - containerPort: 8080 # The port that the container is running on in the cluster
