@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: vue-app-deployment
+  labels:
+    app: vue-app-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: vue-app-deployment
+  template:
+    metadata:
+      labels:
+        app: vue-app-deployment
+    spec:
+      containers:
+      - name: vue-app-deployment
+        image: nobleson/robotapocalypse-app:latest
+        ports:
+        - containerPort: 4000
